@@ -1,0 +1,20 @@
+.box {
+    text-align: center;
+    box-shadow: 0 3px 3px #ccc;
+    width: 170px;
+    margin: 6px;
+    padding:0 6px;
+    transition: all .3s;
+    border: 1px solid #eee;
+    img{
+        width:100px;
+        height: 140px;
+    }
+    h4{
+        margin-bottom: 3px;
+    }
+    &:hover{
+        transform: translateY(5px);
+        
+    }
+}

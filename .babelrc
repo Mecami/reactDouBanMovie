@@ -1,0 +1,36 @@
+{
+    "presets": [ [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry"
+      }
+    ],"@babel/preset-react"],
+    "plugins": ["@babel/plugin-proposal-class-properties",
+      [
+        "component", 
+        {
+        "libraryName": "mint-ui", 
+        "style": true
+        }
+      ], 
+      [
+          "@babel/plugin-transform-runtime",
+          {
+          "corejs": 2, // polyfill 需要使用@babel/runtime-corejs2
+          "useBuildIns":"usage", //按需引入,即使用什么新特性打包什么新特性, 可以减小打包的体积
+          }
+      ],
+      [
+          "import",
+          {
+          "libraryName": "antd",
+          "style": "css"   // 这里用ture会出错，还是用回css吧。用true回加载less文件。
+          }
+      ]
+    ],
+    "ignore": [
+        "./src/lib/mui/js/*.js"  // 建了lib文件夹，存放mui相关文件
+    ]
+
+
+}
